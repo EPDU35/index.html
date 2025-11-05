@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storyboard MIAGE ID+</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            table { page-break-inside: auto; }
+            tr { page-break-inside: avoid; page-break-after: auto; }
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        
+        .download-btn {
+            display: block;
+            margin: 0 auto 20px;
+            padding: 12px 30px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: #2980b9;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th {
+            background: #34495e;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #2c3e50;
+        }
+        
+        td {
+            padding: 12px;
+            border: 1px solid #bdc3c7;
+            vertical-align: top;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        tr:nth-child(even) {
+            background: #ecf0f1;
+        }
+        
+        tr:hover {
+            background: #d5dbdd;
+        }
+        
+        .col-module {
+            width: 20%;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .col-tasks {
+            width: 30%;
+        }
+        
+        .col-tech {
+            width: 25%;
+            color: #16a085;
+        }
+        
+        .col-result {
+            width: 25%;
+            color: #7f8c8d;
+        }
+        
+        .highlight-row {
+            background: #fff3cd !important;
+        }
+        
+        .highlight-row:hover {
+            background: #ffe69c !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="download-btn no-print" onclick="window.print()">📄 Télécharger en PDF</button>
+        
+        <h1>Storyboard MIAGE ID+</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-module">Écran / Module</th>
+                    <th class="col-tasks">Tâches principales</th>
+                    <th class="col-tech">Technologies / Langages</th>
+                    <th class="col-result">Résultat / Attente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-module">Splash Screen</td>
+                    <td class="col-tasks">Afficher logo + slogan + charger données locales</td>
+                    <td class="col-tech">Flutter / React Native / PWA HTML/CSS/JS</td>
+                    <td class="col-result">L'app s'ouvre, l'utilisateur voit le logo et slogan, données locales préparées</td>
+                </tr>
+                <tr>
+                    <td class="col-module">Inscription / Connexion</td>
+                    <td class="col-tasks">
+                        - Saisie Nom, Prénom, Classe, Email, Photo<br>
+                        - Génération QR code unique<br>
+                        - Stockage local + serveur si Internet
+                    </td>
+                    <td class="col-tech">Flutter forms / React forms / Firebase Auth</td>
+                    <td class="col-result">Profil créé, QR code unique généré, stocké localement et sur serveur si Internet disponible</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="col-module">Étapes pour remplir le formulaire d'inscription</td>
+                    <td class="col-tasks">
+                        1. L'étudiant ouvre l'app et clique sur "S'inscrire"<br>
+                        2. Remplir le prénom et le nom<br>
+                        3. Sélectionner la classe dans un menu déroulant<br>
+                        4. Saisir l'email universitaire<br>
+                        5. Ajouter une photo (optionnelle ou obligatoire selon le réglage)<br>
+                        6. Cliquer sur "Valider" pour générer le QR code<br>
+                        7. Confirmer les informations affichées et enregistrer le profil
+                    </td>
+                    <td class="col-tech">Flutter forms / React forms / Validation JS / Firebase Auth</td>
+                    <td class="col-result">Profil étudiant complet + QR code généré et prêt à scanner</td>
+                </tr>
+                <tr>
+                    <td class="col-module">Tableau de bord étudiant</td>
+                    <td class="col-tasks">Voir QR code personnel, bouton scanner, historique rapide, notifications</td>
+                    <td class="col-tech">Flutter UI / React / PWA</td>
+                    <td class="col-result">Étudiant peut scanner QR code, voir ses présences et notifications, interface simple et claire</td>
+                </tr>
+                <tr>
+                    <td class="col-module">Scanner QR code (SmartPresence)</td>
+                    <td class="col-tasks">Scanner QR code du prof ou événement, valider présence, stocker localement</td>
+                    <td class="col-tech">Flutter Barcode Scanner / jsQR (PWA) / SQLite / localStorage</td>
+                    <td class="col-result">Présence validée, affichage confirmation, stockage hors ligne si pas de réseau</td>
+                </tr>
+                <tr>
+                    <td class="col-module">Historique des présences</td>
+                    <td class="col-tasks">Lister toutes les présences avec filtre par date/matière, retards/absences</td>
+                    <td class="col-tech">Flutter ListView / React Table / PWA IndexedDB</td>
+                    <td class="col-result">Étudiant voit toutes ses présences, retards et absences, filtrable facilement</td>
+                </tr>
+                <tr>
+                    <td class="col-module">Module événements / bibliothèque</td>
+                    <td class="col-tasks">Scanner QR pour entrer à un événement ou emprunter un livre, enregistrer participation</td>
+                    <td class="col-tech">Flutter / React / PWA + Firebase</td>
+                    <td class="col-result">Historique mis à jour automatiquement, participation confirmée, interface claire</td>
+                </tr>
+                <tr>
+                    <td class="col-module">Tableau de bord Prof / Admin</td>
+                    <td class="col-tasks">Scanner étudiants, générer QR cours/événement, liste présents/absents, statistiques</td>
+                    <td class="col-tech">Flutter / React / Node.js + Express / Firebase / Supabase</td>
+                    <td class="col-result">Prof peut gérer présences et événements rapidement, voir statistiques et historiques</td>
+                </tr>
+                <tr>
+                    <td class="col-module">Synchronisation hors ligne / en ligne</td>
+                    <td class="col-tasks">Détecter connexion, envoyer automatiquement données locales vers serveur, gérer conflits</td>
+                    <td class="col-tech">Flutter background sync / PWA service worker / Firebase / Supabase</td>
+                    <td class="col-result">Données locales synchronisées automatiquement dès que le réseau est disponible</td>
+                </tr>
+                <tr>
+                    <td class="col-module">Sécurité</td>
+                    <td class="col-tasks">JWT pour QR code, chiffrement des données, prévention falsification</td>
+                    <td class="col-tech">Python / Node.js / Firebase Security Rules</td>
+                    <td class="col-result">QR code sécurisé, données confidentielles protégées, présence authentique</td>
+                </tr>
+                <tr>
+                    <td class="col-module">Import liste classe + génération matricule</td>
+                    <td class="col-tasks">Lire fichier Excel, créer matricule unique, associer au QR code</td>
+                    <td class="col-tech">Python (pandas) + openpyxl + qrcode</td>
+                    <td class="col-result">Chaque étudiant reçoit un matricule unique et un QR code prêt à être utilisé dans l'app</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
